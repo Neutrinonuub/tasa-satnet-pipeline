@@ -172,6 +172,10 @@ claude-flow.config.json
 .swarm/
 .hive-mind/
 .claude-flow/
+
+# Claude Code / Development tools
+claude-flow.cmd
+prompts/
 memory/
 coordination/
 memory/claude-flow-data.json
@@ -210,3 +214,10 @@ data/cached_lightcurves/*.npy
 training_log.txt
 training_log_venv.txt
 download_log.txt
+
+# Development documentation (keep only essential docs)
+docs/PHASE0-COMPLETE.md
+docs/RAPID-DEPLOYMENT-SUCCESS.md
+docs/REAL-DEPLOYMENT-VERIFIED.md
+docs/DEPLOYMENT-ISSUES-FOUND.md
+docs/FIXES-SUMMARY.md
