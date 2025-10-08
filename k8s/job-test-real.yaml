@@ -1,0 +1,47 @@
+# Test job that runs the full pipeline
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tasa-test-pipeline
+  namespace: tasa-satnet
+  labels:
+    app: tasa-test
+    component: pipeline
+spec:
+  template:
+    metadata:
+      labels:
+        app: tasa-test
+    spec:
+      containers:
+      - name: test-pipeline
+        image: tasa-satnet-pipeline:latest
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/sh"]
+        args:
+          - "-c"
+          - |
+            set -e
+            echo "=== Testing Full Pipeline ==="
+            echo "Step 1: Parse"
+            python scripts/parse_oasis_log.py data/sample_oasis.log -o /tmp/windows.json
+            echo "Step 2: Scenario"
+            python scripts/gen_scenario.py /tmp/windows.json -o /tmp/scenario.json
+            echo "Step 3: Metrics"
+            python scripts/metrics.py /tmp/scenario.json -o /tmp/metrics.csv
+            echo "Step 4: Scheduler"
+            python scripts/scheduler.py /tmp/scenario.json -o /tmp/schedule.csv
+            echo "=== Pipeline Complete ==="
+            echo "All tests passed!"
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+      restartPolicy: Never
+  backoffLimit: 1

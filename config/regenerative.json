@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "name": "OASIS Scenario - regenerative",
+    "mode": "regenerative",
+    "generated_at": "2025-10-08T01:33:29.346445+00:00",
+    "source": "data\\sample_oasis.log"
+  },
+  "topology": {
+    "satellites": [
+      {
+        "id": "SAT-1",
+        "type": "satellite",
+        "orbit": "LEO",
+        "altitude_km": 550
+      }
+    ],
+    "gateways": [
+      {
+        "id": "HSINCHU",
+        "type": "gateway",
+        "location": "HSINCHU",
+        "capacity_mbps": 100
+      },
+      {
+        "id": "TAIPEI",
+        "type": "gateway",
+        "location": "TAIPEI",
+        "capacity_mbps": 100
+      }
+    ],
+    "links": [
+      {
+        "source": "SAT-1",
+        "target": "TAIPEI",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "SAT-1",
+        "target": "HSINCHU",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      }
+    ]
+  },
+  "events": [
+    {
+      "time": "2025-10-08T01:23:45+00:00",
+      "type": "link_up",
+      "source": "SAT-1",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T01:33:45+00:00",
+      "type": "link_down",
+      "source": "SAT-1",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T02:00:00+00:00",
+      "type": "link_up",
+      "source": "SAT-1",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T02:08:00+00:00",
+      "type": "link_down",
+      "source": "SAT-1",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    }
+  ],
+  "parameters": {
+    "relay_mode": "regenerative",
+    "propagation_model": "free_space",
+    "data_rate_mbps": 50,
+    "simulation_duration_sec": 86400,
+    "processing_delay_ms": 5.0,
+    "queuing_model": "fifo",
+    "buffer_size_mb": 10
+  }
+}

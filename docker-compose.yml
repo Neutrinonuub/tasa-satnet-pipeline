@@ -1,0 +1,59 @@
+# TASA SatNet Pipeline - Docker Compose Configuration
+version: '3.8'
+
+services:
+  # Main pipeline service
+  tasa-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tasa-satnet-pipeline:latest
+    container_name: tasa-pipeline
+    volumes:
+      # Mount data directory for input/output
+      - ./data:/app/data
+      - ./reports:/app/reports
+      - ./config:/app/config
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+    command: python scripts/parse_oasis_log.py data/sample_oasis.log -o data/oasis_windows.json
+    restart: unless-stopped
+    networks:
+      - tasa-network
+
+  # Parser service (for testing)
+  parser:
+    image: tasa-satnet-pipeline:latest
+    container_name: tasa-parser
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=DEBUG
+    command: python scripts/parse_oasis_log.py data/sample_oasis.log -o data/oasis_windows.json --min-duration 60
+    networks:
+      - tasa-network
+    profiles:
+      - testing
+
+  # Test runner service
+  test-runner:
+    image: tasa-satnet-pipeline:latest
+    container_name: tasa-tests
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTEST_OPTS=-v --cov=scripts --cov-report=term-missing
+    command: pytest tests/ ${PYTEST_OPTS}
+    networks:
+      - tasa-network
+    profiles:
+      - testing
+
+networks:
+  tasa-network:
+    driver: bridge
+    name: tasa-satnet-network

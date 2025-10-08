@@ -1,0 +1,9 @@
+# Kubernetes Namespace for TASA SatNet Pipeline
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tasa-satnet
+  labels:
+    name: tasa-satnet
+    environment: development
+    project: tasa-satnet-pipeline

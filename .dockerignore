@@ -1,0 +1,68 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+.env
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
+*.coverage.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# CI/CD
+.github/
+
+# Claude Code
+.claude/
+.claude-flow/
+.hive-mind/
+.swarm/
+
+# Logs
+*.log
+!data/*.log
+
+# OS
+Thumbs.db
+
+# Temporary files
+*.tmp
+.tmpmsg
+
+# Reports (will be generated)
+reports/*.csv
+reports/*.json
+reports/*.md
+!reports/.gitkeep
+
+# Config outputs
+config/*.json
+!config/example_mcp.json
+!config/schemas/

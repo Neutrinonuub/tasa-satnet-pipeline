@@ -1,0 +1,79 @@
+# PowerShell deployment script for Windows
+
+Write-Host "=== TASA SatNet Pipeline - K8s Deployment ===" -ForegroundColor Cyan
+Write-Host ""
+
+# Check prerequisites
+Write-Host "Step 1: Checking prerequisites..." -ForegroundColor Yellow
+if (-not (Get-Command kubectl -ErrorAction SilentlyContinue)) {
+    Write-Host "ERROR: kubectl not found" -ForegroundColor Red
+    exit 1
+}
+
+if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
+    Write-Host "ERROR: docker not found" -ForegroundColor Red
+    exit 1
+}
+
+Write-Host "[OK] Prerequisites found" -ForegroundColor Green
+Write-Host ""
+
+# Check Docker daemon
+Write-Host "Step 2: Checking Docker daemon..." -ForegroundColor Yellow
+try {
+    docker ps | Out-Null
+    Write-Host "[OK] Docker daemon running" -ForegroundColor Green
+} catch {
+    Write-Host "ERROR: Docker daemon not running. Please start Docker Desktop." -ForegroundColor Red
+    exit 1
+}
+Write-Host ""
+
+# Build Docker image
+Write-Host "Step 3: Building Docker image..." -ForegroundColor Yellow
+docker build -t tasa-satnet-pipeline:latest .
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "ERROR: Docker build failed" -ForegroundColor Red
+    exit 1
+}
+Write-Host "[OK] Docker image built" -ForegroundColor Green
+Write-Host ""
+
+# Check if using Docker Desktop
+Write-Host "Step 4: Checking K8s context..." -ForegroundColor Yellow
+$context = kubectl config current-context
+Write-Host "Current context: $context"
+
+if ($context -match "docker-desktop") {
+    Write-Host "[OK] Using Docker Desktop K8s" -ForegroundColor Green
+} else {
+    Write-Host "Note: Using context: $context" -ForegroundColor Yellow
+}
+Write-Host ""
+
+# Deploy to K8s
+Write-Host "Step 5: Deploying to K8s..." -ForegroundColor Yellow
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/configmap.yaml
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+Write-Host "[OK] Base deployment complete" -ForegroundColor Green
+Write-Host ""
+
+# Wait for deployment
+Write-Host "Step 6: Waiting for pods..." -ForegroundColor Yellow
+Start-Sleep -Seconds 5
+kubectl get pods -n tasa-satnet
+Write-Host ""
+
+# Show status
+Write-Host "=== Deployment Status ===" -ForegroundColor Cyan
+kubectl get all -n tasa-satnet
+Write-Host ""
+
+Write-Host "=== Deployment Complete ===" -ForegroundColor Green
+Write-Host "Commands:"
+Write-Host "  kubectl get all -n tasa-satnet           # Check status"
+Write-Host "  kubectl logs -f -n tasa-satnet <pod>     # Follow logs"
+Write-Host "  kubectl apply -f k8s/job-parser.yaml     # Run parser job"
+Write-Host "  kubectl apply -f k8s/job-test.yaml       # Run tests"
