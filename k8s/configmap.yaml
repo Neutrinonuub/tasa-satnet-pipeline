@@ -1,0 +1,13 @@
+# ConfigMap for TASA SatNet Pipeline
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tasa-pipeline-config
+  namespace: tasa-satnet
+  labels:
+    app: tasa-pipeline
+data:
+  LOG_LEVEL: "INFO"
+  MIN_DURATION: "60"
+  OUTPUT_FORMAT: "json"
+  PARSER_OPTS: "--min-duration 60"

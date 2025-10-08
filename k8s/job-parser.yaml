@@ -1,0 +1,51 @@
+# Kubernetes Job for running parser
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tasa-parser-job
+  namespace: tasa-satnet
+  labels:
+    app: tasa-parser
+    component: batch
+spec:
+  template:
+    metadata:
+      labels:
+        app: tasa-parser
+    spec:
+      containers:
+      - name: parser
+        image: tasa-satnet-pipeline:latest
+        imagePullPolicy: IfNotPresent
+        command: ["python"]
+        args:
+          - "scripts/parse_oasis_log.py"
+          - "data/sample_oasis.log"
+          - "-o"
+          - "data/oasis_windows.json"
+          - "--min-duration"
+          - "60"
+        envFrom:
+        - configMapRef:
+            name: tasa-pipeline-config
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: data-volume
+          mountPath: /app/data
+        - name: reports-volume
+          mountPath: /app/reports
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: tasa-data-pvc
+      - name: reports-volume
+        persistentVolumeClaim:
+          claimName: tasa-reports-pvc
+      restartPolicy: Never
+  backoffLimit: 3
