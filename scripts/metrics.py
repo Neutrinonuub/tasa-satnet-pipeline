@@ -8,47 +8,80 @@ from pathlib import Path
 from typing import List, Dict
 from datetime import datetime
 import math
+import sys
+
+# Add parent directory to path for config imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config.constants import (
+    PhysicalConstants,
+    LatencyConstants,
+    NetworkConstants,
+    PercentileConstants,
+    ConstellationConstants,
+)
+from config.schemas import validate_scenario, validate_metrics, ValidationError
 
 
 class MetricsCalculator:
     """Calculate network performance metrics."""
-    
-    SPEED_OF_LIGHT = 299792.458  # km/s
-    
-    def __init__(self, scenario: Dict):
+
+    def __init__(self, scenario: Dict, skip_validation: bool = False,
+                 enable_constellation_metrics: bool = True):
         """Initialize with scenario data."""
+        # Validate input scenario
+        if not skip_validation:
+            try:
+                validate_scenario(scenario)
+            except ValidationError as e:
+                raise ValueError(f"Invalid scenario data: {e}") from e
+
         self.scenario = scenario
         self.mode = scenario.get('metadata', {}).get('mode', 'transparent')
         self.metrics: List[Dict] = []
+        self.enable_constellation_metrics = enable_constellation_metrics
+
+        # Per-constellation metrics tracking
+        self.constellation_metrics: Dict[str, List[Dict]] = {}
+        self.constellations = scenario.get('metadata', {}).get('constellations', [])
     
     def compute_all_metrics(self) -> List[Dict]:
         """Compute all metrics for scenario."""
         events = self.scenario.get('events', [])
         parameters = self.scenario.get('parameters', {})
-        
+
         # Group events into sessions (link_up to link_down pairs)
         sessions = self._extract_sessions(events)
-        
+
         for session in sessions:
             metrics = self._compute_session_metrics(session, parameters)
             self.metrics.append(metrics)
-        
+
+            # Track per-constellation metrics if enabled
+            if self.enable_constellation_metrics:
+                constellation = session.get('constellation', 'Unknown')
+                if constellation not in self.constellation_metrics:
+                    self.constellation_metrics[constellation] = []
+                self.constellation_metrics[constellation].append(metrics)
+
         return self.metrics
     
     def _extract_sessions(self, events: List[Dict]) -> List[Dict]:
         """Extract communication sessions from events."""
         sessions = []
         active_links = {}
-        
+
         for event in events:
             link_key = (event['source'], event['target'])
-            
+
             if event['type'] == 'link_up':
                 active_links[link_key] = {
                     'start': event['time'],
                     'source': event['source'],
                     'target': event['target'],
-                    'window_type': event.get('window_type', 'unknown')
+                    'window_type': event.get('window_type', 'unknown'),
+                    'constellation': event.get('constellation', 'Unknown'),
+                    'frequency_band': event.get('frequency_band', 'Unknown'),
+                    'priority': event.get('priority', 'low')
                 }
             elif event['type'] == 'link_down':
                 if link_key in active_links:
@@ -56,7 +89,7 @@ class MetricsCalculator:
                     session['end'] = event['time']
                     sessions.append(session)
                     del active_links[link_key]
-        
+
         return sessions
     
     def _compute_session_metrics(self, session: Dict, parameters: Dict) -> Dict:
@@ -65,20 +98,31 @@ class MetricsCalculator:
         start = datetime.fromisoformat(session['start'].replace('Z', '+00:00'))
         end = datetime.fromisoformat(session['end'].replace('Z', '+00:00'))
         duration_sec = (end - start).total_seconds()
-        
-        # Latency components
+
+        # Get constellation info
+        constellation = session.get('constellation', 'Unknown')
+
+        # Latency components with constellation-specific adjustments
         propagation_delay = self._compute_propagation_delay()
         processing_delay = parameters.get('processing_delay_ms', 0.0)
+
+        # Add constellation-specific processing delay
+        if self.enable_constellation_metrics and constellation != 'Unknown':
+            constellation_delay = ConstellationConstants.CONSTELLATION_PROCESSING_DELAYS.get(
+                constellation, 0.0
+            )
+            processing_delay += constellation_delay
+
         queuing_delay = self._estimate_queuing_delay(duration_sec)
         transmission_delay = self._compute_transmission_delay(parameters)
-        
+
         total_latency = propagation_delay + processing_delay + queuing_delay + transmission_delay
-        
+
         # Throughput
-        data_rate_mbps = parameters.get('data_rate_mbps', 50)
+        data_rate_mbps = parameters.get('data_rate_mbps', NetworkConstants.DEFAULT_LINK_BANDWIDTH_MBPS)
         throughput_mbps = self._compute_throughput(duration_sec, data_rate_mbps)
-        
-        return {
+
+        metrics = {
             'source': session['source'],
             'target': session['target'],
             'window_type': session['window_type'],
@@ -100,52 +144,64 @@ class MetricsCalculator:
             },
             'mode': self.mode
         }
+
+        # Add constellation metadata if enabled
+        if self.enable_constellation_metrics:
+            metrics.update({
+                'constellation': constellation,
+                'frequency_band': session.get('frequency_band', 'Unknown'),
+                'priority': session.get('priority', 'low')
+            })
+
+        return metrics
     
-    def _compute_propagation_delay(self, altitude_km: float = 550) -> float:
+    def _compute_propagation_delay(self, altitude_km: float = None) -> float:
         """Compute propagation delay for satellite link."""
+        if altitude_km is None:
+            altitude_km = PhysicalConstants.DEFAULT_ALTITUDE_KM
         # Simplified: distance to satellite and back
         distance_km = altitude_km * 2  # Up and down
-        delay_ms = (distance_km / self.SPEED_OF_LIGHT) * 1000
+        delay_ms = (distance_km / PhysicalConstants.SPEED_OF_LIGHT_KM_S) * 1000
         return delay_ms
     
     def _estimate_queuing_delay(self, duration_sec: float) -> float:
         """Estimate queuing delay based on traffic patterns."""
         # Simplified model: assume higher queuing during longer sessions
-        if duration_sec < 60:
-            return 0.5  # Low traffic
-        elif duration_sec < 300:
-            return 2.0  # Medium traffic
+        if duration_sec < LatencyConstants.LOW_TRAFFIC_THRESHOLD_SEC:
+            return LatencyConstants.MIN_QUEUING_DELAY_MS  # Low traffic
+        elif duration_sec < LatencyConstants.MEDIUM_TRAFFIC_THRESHOLD_SEC:
+            return LatencyConstants.MEDIUM_QUEUING_DELAY_MS  # Medium traffic
         else:
-            return 5.0  # High traffic
+            return LatencyConstants.MAX_QUEUING_DELAY_MS  # High traffic
     
     def _compute_transmission_delay(self, parameters: Dict) -> float:
         """Compute transmission delay for packet."""
-        packet_size_kb = 1.5  # MTU ~1500 bytes
-        data_rate_mbps = parameters.get('data_rate_mbps', 50)
+        packet_size_kb = NetworkConstants.PACKET_SIZE_KB
+        data_rate_mbps = parameters.get('data_rate_mbps', NetworkConstants.DEFAULT_LINK_BANDWIDTH_MBPS)
         delay_ms = (packet_size_kb * 8) / (data_rate_mbps * 1000) * 1000
         return delay_ms
     
     def _compute_throughput(self, duration_sec: float, data_rate_mbps: float) -> float:
         """Compute average throughput."""
-        # Simplified: assume 80% utilization during active session
-        return data_rate_mbps * 0.8
+        # Simplified: assume default utilization during active session
+        return data_rate_mbps * (NetworkConstants.DEFAULT_UTILIZATION_PERCENT / 100.0)
     
     def generate_summary(self) -> Dict:
         """Generate summary statistics."""
         if not self.metrics:
             return {}
-        
+
         latencies = [m['latency']['total_ms'] for m in self.metrics]
         throughputs = [m['throughput']['average_mbps'] for m in self.metrics]
-        
-        return {
+
+        summary = {
             'total_sessions': len(self.metrics),
             'mode': self.mode,
             'latency': {
                 'mean_ms': round(sum(latencies) / len(latencies), 2),
                 'min_ms': round(min(latencies), 2),
                 'max_ms': round(max(latencies), 2),
-                'p95_ms': round(self._percentile(latencies, 95), 2)
+                'p95_ms': round(self._percentile(latencies, PercentileConstants.P95), 2)
             },
             'throughput': {
                 'mean_mbps': round(sum(throughputs) / len(throughputs), 2),
@@ -154,6 +210,41 @@ class MetricsCalculator:
             },
             'total_duration_sec': sum(m['duration_sec'] for m in self.metrics)
         }
+
+        # Add per-constellation statistics if enabled
+        if self.enable_constellation_metrics and self.constellation_metrics:
+            summary['constellation_stats'] = self._generate_constellation_stats()
+
+        return summary
+
+    def _generate_constellation_stats(self) -> Dict:
+        """Generate per-constellation statistics."""
+        stats = {}
+
+        for constellation, metrics_list in self.constellation_metrics.items():
+            if not metrics_list:
+                continue
+
+            latencies = [m['latency']['total_ms'] for m in metrics_list]
+            throughputs = [m['throughput']['average_mbps'] for m in metrics_list]
+
+            stats[constellation] = {
+                'sessions': len(metrics_list),
+                'latency': {
+                    'mean_ms': round(sum(latencies) / len(latencies), 2),
+                    'min_ms': round(min(latencies), 2),
+                    'max_ms': round(max(latencies), 2),
+                    'p95_ms': round(self._percentile(latencies, PercentileConstants.P95), 2)
+                },
+                'throughput': {
+                    'mean_mbps': round(sum(throughputs) / len(throughputs), 2),
+                    'min_mbps': round(min(throughputs), 2),
+                    'max_mbps': round(max(throughputs), 2)
+                },
+                'total_duration_sec': sum(m['duration_sec'] for m in metrics_list)
+            }
+
+        return stats
     
     def _percentile(self, data: List[float], percentile: int) -> float:
         """Compute percentile of data."""
@@ -165,17 +256,22 @@ class MetricsCalculator:
         """Export metrics to CSV."""
         if not self.metrics:
             return
-        
+
         with output_path.open('w', newline='') as f:
+            # Add constellation fields if enabled
             fieldnames = [
                 'source', 'target', 'window_type', 'start', 'end', 'duration_sec',
                 'latency_total_ms', 'latency_rtt_ms', 'throughput_mbps', 'utilization_percent', 'mode'
             ]
+
+            if self.enable_constellation_metrics:
+                fieldnames.extend(['constellation', 'frequency_band', 'priority'])
+
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
-            
+
             for m in self.metrics:
-                writer.writerow({
+                row = {
                     'source': m['source'],
                     'target': m['target'],
                     'window_type': m['window_type'],
@@ -187,7 +283,17 @@ class MetricsCalculator:
                     'throughput_mbps': m['throughput']['average_mbps'],
                     'utilization_percent': m['throughput']['utilization_percent'],
                     'mode': m['mode']
-                })
+                }
+
+                # Add constellation fields if enabled
+                if self.enable_constellation_metrics:
+                    row.update({
+                        'constellation': m.get('constellation', 'Unknown'),
+                        'frequency_band': m.get('frequency_band', 'Unknown'),
+                        'priority': m.get('priority', 'low')
+                    })
+
+                writer.writerow(row)
 
 
 def main():
@@ -196,33 +302,89 @@ def main():
     ap.add_argument("scenario", type=Path, help="Scenario JSON file")
     ap.add_argument("-o", "--output", type=Path, default=Path("reports/metrics.csv"))
     ap.add_argument("--summary", type=Path, default=Path("reports/summary.json"))
-    
+    ap.add_argument("--skip-validation", action="store_true", help="Skip schema validation (not recommended)")
+    ap.add_argument("--visualize", action="store_true", help="Generate visualization charts and maps")
+    ap.add_argument("--viz-output-dir", type=Path, default=Path("reports/viz"),
+                   help="Output directory for visualizations (default: reports/viz/)")
+
     args = ap.parse_args()
-    
+
     # Load scenario
     with args.scenario.open() as f:
         scenario = json.load(f)
-    
+
     # Compute metrics
-    calculator = MetricsCalculator(scenario)
-    metrics = calculator.compute_all_metrics()
-    summary = calculator.generate_summary()
-    
+    try:
+        calculator = MetricsCalculator(scenario, skip_validation=args.skip_validation)
+        metrics = calculator.compute_all_metrics()
+        summary = calculator.generate_summary()
+    except ValueError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 1
+
+    # Validate output metrics summary
+    if not args.skip_validation and summary:
+        try:
+            validate_metrics(summary)
+            print(f"✓ Metrics validation passed", file=sys.stderr)
+        except ValidationError as e:
+            print(f"ERROR: Generated metrics validation failed: {e}", file=sys.stderr)
+            return 1
+
     # Export
     args.output.parent.mkdir(parents=True, exist_ok=True)
     calculator.export_csv(args.output)
-    
+
     args.summary.write_text(json.dumps(summary, indent=2))
-    
-    print(json.dumps({
+
+    # Generate visualizations if requested
+    viz_results = None
+    if args.visualize:
+        try:
+            # Try importing from same directory first
+            try:
+                from metrics_visualization import MetricsVisualizer
+            except ImportError:
+                # If that fails, try with scripts prefix
+                from scripts.metrics_visualization import MetricsVisualizer
+
+            print("\n" + "="*60, file=sys.stderr)
+            print("Generating visualizations...", file=sys.stderr)
+            print("="*60, file=sys.stderr)
+
+            visualizer = MetricsVisualizer(scenario, metrics)
+            viz_results = visualizer.generate_all(args.viz_output_dir)
+
+            print("\n" + "="*60, file=sys.stderr)
+            print(f"✓ Visualizations saved to: {args.viz_output_dir}", file=sys.stderr)
+            print("="*60 + "\n", file=sys.stderr)
+
+        except ImportError as e:
+            print(f"WARNING: Could not import metrics_visualization: {e}", file=sys.stderr)
+            print("Install visualization dependencies: pip install matplotlib folium", file=sys.stderr)
+        except Exception as e:
+            print(f"WARNING: Visualization generation failed: {e}", file=sys.stderr)
+
+    # Build output response
+    output_data = {
         'metrics_computed': len(metrics),
         'mode': summary.get('mode'),
         'mean_latency_ms': summary.get('latency', {}).get('mean_ms'),
         'mean_throughput_mbps': summary.get('throughput', {}).get('mean_mbps'),
         'output_csv': str(args.output),
         'output_summary': str(args.summary)
-    }, indent=2))
-    
+    }
+
+    if viz_results:
+        output_data['visualizations'] = {
+            'enabled': True,
+            'output_dir': str(args.viz_output_dir),
+            'manifest': str(args.viz_output_dir / 'visualization_manifest.json'),
+            'generated': list(viz_results.get('visualizations', {}).keys())
+        }
+
+    print(json.dumps(output_data, indent=2))
+
     return 0
 
 

@@ -1,0 +1,16 @@
+{
+  "total_slots": 35,
+  "scheduled": 35,
+  "conflicts": 0,
+  "success_rate": 100.0,
+  "gateways": 6,
+  "gateway_usage_sec": {
+    "HSINCHU": 6845.0,
+    "TAIPEI": 4925.0,
+    "KAOHSIUNG": 3840.0,
+    "TAINAN": 2495.0,
+    "TAICHUNG": 3140.0,
+    "HUALIEN": 1470.0
+  },
+  "capacity_per_gateway": 8
+}

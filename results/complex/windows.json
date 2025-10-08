@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "source": "data\\complex_oasis.log",
+    "count": 35
+  },
+  "windows": [
+    {
+      "type": "xband",
+      "start": "2025-10-08T00:24:00Z",
+      "end": "2025-10-08T00:31:20Z",
+      "sat": "STARLINK-5123",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T06:52:00Z",
+      "end": "2025-10-08T06:59:45Z",
+      "sat": "STARLINK-5123",
+      "gw": "TAINAN",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T01:55:00Z",
+      "end": "2025-10-08T02:07:15Z",
+      "sat": "ONEWEB-0234",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T08:21:00Z",
+      "end": "2025-10-08T08:28:30Z",
+      "sat": "ONEWEB-0234",
+      "gw": "HUALIEN",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T02:39:30Z",
+      "end": "2025-10-08T02:48:45Z",
+      "sat": "IRIDIUM-NEXT-108",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T03:45:30Z",
+      "end": "2025-10-08T04:15:00Z",
+      "sat": "GPS-IIF-12",
+      "gw": "KAOHSIUNG",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T04:28:45Z",
+      "end": "2025-10-08T04:35:20Z",
+      "sat": "STARLINK-7891",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T05:24:30Z",
+      "end": "2025-10-08T05:33:15Z",
+      "sat": "ONEWEB-0567",
+      "gw": "TAINAN",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T11:39:00Z",
+      "end": "2025-10-08T11:47:30Z",
+      "sat": "ONEWEB-0567",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T12:11:00Z",
+      "end": "2025-10-08T12:18:30Z",
+      "sat": "STARLINK-5123",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T12:12:00Z",
+      "end": "2025-10-08T12:20:15Z",
+      "sat": "ONEWEB-0234",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T12:13:00Z",
+      "end": "2025-10-08T12:21:45Z",
+      "sat": "IRIDIUM-NEXT-108",
+      "gw": "TAINAN",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T18:39:15Z",
+      "end": "2025-10-08T18:47:00Z",
+      "sat": "STARLINK-7891",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T19:24:45Z",
+      "end": "2025-10-08T19:32:30Z",
+      "sat": "ONEWEB-0567",
+      "gw": "TAINAN",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T20:54:00Z",
+      "end": "2025-10-08T21:02:15Z",
+      "sat": "IRIDIUM-NEXT-108",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "xband",
+      "start": "2025-10-08T23:24:00Z",
+      "end": "2025-10-08T23:31:45Z",
+      "sat": "STARLINK-5123",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T00:15:30Z",
+      "end": "2025-10-08T00:23:45Z",
+      "sat": "STARLINK-5123",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T06:42:15Z",
+      "end": "2025-10-08T06:51:30Z",
+      "sat": "STARLINK-5123",
+      "gw": "KAOHSIUNG",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T01:45:00Z",
+      "end": "2025-10-08T01:54:30Z",
+      "sat": "ONEWEB-0234",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T08:12:20Z",
+      "end": "2025-10-08T08:20:45Z",
+      "sat": "ONEWEB-0234",
+      "gw": "TAICHUNG",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T02:30:15Z",
+      "end": "2025-10-08T02:39:00Z",
+      "sat": "IRIDIUM-NEXT-108",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T09:15:45Z",
+      "end": "2025-10-08T09:24:20Z",
+      "sat": "IRIDIUM-NEXT-108",
+      "gw": "TAINAN",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T03:00:00Z",
+      "end": "2025-10-08T03:45:00Z",
+      "sat": "GPS-IIF-12",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T04:20:30Z",
+      "end": "2025-10-08T04:28:15Z",
+      "sat": "STARLINK-7891",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T10:45:00Z",
+      "end": "2025-10-08T10:53:30Z",
+      "sat": "STARLINK-7891",
+      "gw": "HUALIEN",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T05:15:45Z",
+      "end": "2025-10-08T05:24:00Z",
+      "sat": "ONEWEB-0567",
+      "gw": "KAOHSIUNG",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T11:30:20Z",
+      "end": "2025-10-08T11:38:45Z",
+      "sat": "ONEWEB-0567",
+      "gw": "TAICHUNG",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T12:00:00Z",
+      "end": "2025-10-08T12:08:00Z",
+      "sat": "STARLINK-5123",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T12:01:30Z",
+      "end": "2025-10-08T12:09:45Z",
+      "sat": "ONEWEB-0234",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T12:02:15Z",
+      "end": "2025-10-08T12:10:30Z",
+      "sat": "IRIDIUM-NEXT-108",
+      "gw": "KAOHSIUNG",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T18:30:00Z",
+      "end": "2025-10-08T18:38:45Z",
+      "sat": "STARLINK-7891",
+      "gw": "HSINCHU",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T19:15:30Z",
+      "end": "2025-10-08T19:24:15Z",
+      "sat": "ONEWEB-0567",
+      "gw": "KAOHSIUNG",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T20:45:00Z",
+      "end": "2025-10-08T20:53:30Z",
+      "sat": "IRIDIUM-NEXT-108",
+      "gw": "TAIPEI",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T22:00:15Z",
+      "end": "2025-10-08T22:35:45Z",
+      "sat": "GPS-IIF-12",
+      "gw": "TAICHUNG",
+      "source": "log"
+    },
+    {
+      "type": "cmd",
+      "start": "2025-10-08T23:15:00Z",
+      "end": "2025-10-08T23:23:30Z",
+      "sat": "STARLINK-5123",
+      "gw": "HUALIEN",
+      "source": "log"
+    }
+  ]
+}

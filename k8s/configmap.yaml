@@ -11,3 +11,34 @@ data:
   MIN_DURATION: "60"
   OUTPUT_FORMAT: "json"
   PARSER_OPTS: "--min-duration 60"
+
+  # Visualization settings
+  VISUALIZATION_ENABLED: "true"
+  VISUALIZATION_OUTPUT_DIR: "/data/reports/viz"
+  VISUALIZATION_DPI: "150"
+  VISUALIZATION_FORMAT: "png"
+
+  # Metrics visualization options
+  METRICS_VISUALIZE: "true"
+  METRICS_VIZ_COVERAGE_MAP: "true"
+  METRICS_VIZ_INTERACTIVE_MAP: "true"
+  METRICS_VIZ_TIMELINE: "true"
+  METRICS_VIZ_PERFORMANCE_CHARTS: "true"
+
+  # TLE-OASIS Integration (Phase 2A)
+  TLE_INTEGRATION_ENABLED: "true"
+  TLE_FILE_PATH: "/data/starlink.tle"
+  TLE_MERGE_STRATEGY: "union"  # union, intersection, tle-only, oasis-only
+  TLE_STATIONS_FILE: "/data/taiwan_ground_stations.json"
+  TLE_TIMEZONE: "UTC"
+
+  # Multi-Constellation Support (Phase 2A)
+  MULTI_CONSTELLATION_ENABLED: "true"
+  CONSTELLATION_CONFLICT_DETECTION: "true"
+  CONSTELLATION_PRIORITY_SCHEDULING: "true"
+  ENABLED_CONSTELLATIONS: "GPS,Starlink,OneWeb,Iridium"  # Comma-separated list
+
+  # Performance & Scale
+  BATCH_PROCESSING_ENABLED: "true"
+  MAX_SATELLITES_PER_BATCH: "100"
+  SIMULATION_DURATION_SEC: "86400"  # 24 hours

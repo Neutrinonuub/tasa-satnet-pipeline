@@ -1,0 +1,16 @@
+{
+  "total_sessions": 35,
+  "mode": "transparent",
+  "latency": {
+    "mean_ms": 8.91,
+    "min_ms": 8.91,
+    "max_ms": 8.91,
+    "p95_ms": 8.91
+  },
+  "throughput": {
+    "mean_mbps": 40.0,
+    "min_mbps": 40.0,
+    "max_mbps": 40.0
+  },
+  "total_duration_sec": 22715.0
+}

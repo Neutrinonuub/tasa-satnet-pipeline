@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "name": "OASIS Scenario - transparent",
+    "mode": "transparent",
+    "generated_at": "2025-10-08T06:34:15.978446+00:00",
+    "source": "data\\sample_oasis.log",
+    "constellations": [
+      "Unknown"
+    ],
+    "constellation_count": 1,
+    "multi_constellation": false
+  },
+  "topology": {
+    "satellites": [
+      {
+        "id": "SAT-1",
+        "type": "satellite",
+        "orbit": "LEO",
+        "altitude_km": 550,
+        "constellation": "Unknown",
+        "frequency_band": "Unknown",
+        "priority": "low",
+        "processing_delay_ms": 10.0
+      }
+    ],
+    "gateways": [
+      {
+        "id": "HSINCHU",
+        "type": "gateway",
+        "location": "HSINCHU",
+        "capacity_mbps": 100
+      },
+      {
+        "id": "TAIPEI",
+        "type": "gateway",
+        "location": "TAIPEI",
+        "capacity_mbps": 100
+      }
+    ],
+    "links": [
+      {
+        "source": "SAT-1",
+        "target": "HSINCHU",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 5.0,
+        "constellation": "Unknown",
+        "frequency_band": "Unknown",
+        "priority": "low"
+      },
+      {
+        "source": "SAT-1",
+        "target": "TAIPEI",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 5.0,
+        "constellation": "Unknown",
+        "frequency_band": "Unknown",
+        "priority": "low"
+      }
+    ],
+    "constellation_summary": {
+      "Unknown": 1
+    }
+  },
+  "events": [
+    {
+      "time": "2025-10-08T01:23:45+00:00",
+      "type": "link_up",
+      "source": "SAT-1",
+      "target": "HSINCHU",
+      "window_type": "cmd",
+      "constellation": "Unknown",
+      "frequency_band": "Unknown",
+      "priority": "low"
+    },
+    {
+      "time": "2025-10-08T01:33:45+00:00",
+      "type": "link_down",
+      "source": "SAT-1",
+      "target": "HSINCHU",
+      "window_type": "cmd",
+      "constellation": "Unknown",
+      "frequency_band": "Unknown",
+      "priority": "low"
+    },
+    {
+      "time": "2025-10-08T02:00:00+00:00",
+      "type": "link_up",
+      "source": "SAT-1",
+      "target": "TAIPEI",
+      "window_type": "xband",
+      "constellation": "Unknown",
+      "frequency_band": "Unknown",
+      "priority": "low"
+    },
+    {
+      "time": "2025-10-08T02:08:00+00:00",
+      "type": "link_down",
+      "source": "SAT-1",
+      "target": "TAIPEI",
+      "window_type": "xband",
+      "constellation": "Unknown",
+      "frequency_band": "Unknown",
+      "priority": "low"
+    }
+  ],
+  "parameters": {
+    "relay_mode": "transparent",
+    "propagation_model": "free_space",
+    "data_rate_mbps": 50,
+    "simulation_duration_sec": 86400,
+    "processing_delay_ms": 0.0,
+    "queuing_model": "fifo",
+    "buffer_size_mb": 10
+  }
+}
