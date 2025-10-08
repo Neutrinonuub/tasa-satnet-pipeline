@@ -1,6 +1,7 @@
 """Pytest configuration and shared fixtures."""
 from __future__ import annotations
 import pytest
+import json
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -135,3 +136,78 @@ def temp_log_file(tmp_path: Path, valid_log_content: str) -> Path:
 def temp_output_file(tmp_path: Path) -> Path:
     """Create a temporary output file path."""
     return tmp_path / "output.json"
+
+
+@pytest.fixture
+def temp_output_dir(tmp_path: Path) -> Path:
+    """Create a temporary output directory for visualization files."""
+    output_dir = tmp_path / "viz_output"
+    output_dir.mkdir(exist_ok=True)
+    return output_dir
+
+
+@pytest.fixture
+def taiwan_stations_data() -> dict:
+    """Load Taiwan ground stations data."""
+    data_dir = Path(__file__).parent.parent / "data"
+    stations_file = data_dir / "taiwan_ground_stations.json"
+
+    if not stations_file.exists():
+        # Return mock data if file doesn't exist
+        return {
+            "ground_stations": [
+                {
+                    "name": "HSINCHU",
+                    "location": "新竹站",
+                    "lat": 24.7881,
+                    "lon": 120.9979,
+                    "alt": 52,
+                    "type": "command_control"
+                },
+                {
+                    "name": "TAIPEI",
+                    "location": "台北站",
+                    "lat": 25.0330,
+                    "lon": 121.5654,
+                    "alt": 10,
+                    "type": "data_downlink"
+                }
+            ]
+        }
+
+    with open(stations_file, encoding='utf-8') as f:
+        return json.load(f)
+
+
+@pytest.fixture
+def complex_windows_data() -> dict:
+    """Load complex scenario windows data."""
+    data_dir = Path(__file__).parent.parent / "results" / "complex"
+    windows_file = data_dir / "windows.json"
+
+    if not windows_file.exists():
+        # Return mock data if file doesn't exist
+        return {
+            "meta": {"source": "test", "count": 2},
+            "windows": [
+                {
+                    "type": "xband",
+                    "start": "2025-10-08T10:00:00Z",
+                    "end": "2025-10-08T10:10:00Z",
+                    "sat": "TEST-SAT",
+                    "gw": "TAIPEI",
+                    "source": "test"
+                },
+                {
+                    "type": "cmd",
+                    "start": "2025-10-08T11:00:00Z",
+                    "end": "2025-10-08T11:05:00Z",
+                    "sat": "TEST-SAT",
+                    "gw": "HSINCHU",
+                    "source": "test"
+                }
+            ]
+        }
+
+    with open(windows_file, encoding='utf-8') as f:
+        return json.load(f)

@@ -1,0 +1,841 @@
+{
+  "metadata": {
+    "name": "OASIS Scenario - regenerative",
+    "mode": "regenerative",
+    "generated_at": "2025-10-08T04:46:16.981733+00:00",
+    "source": "data\\complex_oasis.log"
+  },
+  "topology": {
+    "satellites": [
+      {
+        "id": "GPS-IIF-12",
+        "type": "satellite",
+        "orbit": "LEO",
+        "altitude_km": 550
+      },
+      {
+        "id": "IRIDIUM-NEXT-108",
+        "type": "satellite",
+        "orbit": "LEO",
+        "altitude_km": 550
+      },
+      {
+        "id": "ONEWEB-0234",
+        "type": "satellite",
+        "orbit": "LEO",
+        "altitude_km": 550
+      },
+      {
+        "id": "ONEWEB-0567",
+        "type": "satellite",
+        "orbit": "LEO",
+        "altitude_km": 550
+      },
+      {
+        "id": "STARLINK-5123",
+        "type": "satellite",
+        "orbit": "LEO",
+        "altitude_km": 550
+      },
+      {
+        "id": "STARLINK-7891",
+        "type": "satellite",
+        "orbit": "LEO",
+        "altitude_km": 550
+      }
+    ],
+    "gateways": [
+      {
+        "id": "HSINCHU",
+        "type": "gateway",
+        "location": "HSINCHU",
+        "capacity_mbps": 100
+      },
+      {
+        "id": "HUALIEN",
+        "type": "gateway",
+        "location": "HUALIEN",
+        "capacity_mbps": 100
+      },
+      {
+        "id": "KAOHSIUNG",
+        "type": "gateway",
+        "location": "KAOHSIUNG",
+        "capacity_mbps": 100
+      },
+      {
+        "id": "TAICHUNG",
+        "type": "gateway",
+        "location": "TAICHUNG",
+        "capacity_mbps": 100
+      },
+      {
+        "id": "TAINAN",
+        "type": "gateway",
+        "location": "TAINAN",
+        "capacity_mbps": 100
+      },
+      {
+        "id": "TAIPEI",
+        "type": "gateway",
+        "location": "TAIPEI",
+        "capacity_mbps": 100
+      }
+    ],
+    "links": [
+      {
+        "source": "ONEWEB-0234",
+        "target": "KAOHSIUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0234",
+        "target": "HUALIEN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0234",
+        "target": "TAIPEI",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0234",
+        "target": "HSINCHU",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0234",
+        "target": "TAINAN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0234",
+        "target": "TAICHUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-7891",
+        "target": "KAOHSIUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-7891",
+        "target": "HUALIEN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-7891",
+        "target": "TAIPEI",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-7891",
+        "target": "HSINCHU",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-7891",
+        "target": "TAINAN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-7891",
+        "target": "TAICHUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "GPS-IIF-12",
+        "target": "KAOHSIUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "GPS-IIF-12",
+        "target": "HUALIEN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "GPS-IIF-12",
+        "target": "TAIPEI",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "GPS-IIF-12",
+        "target": "HSINCHU",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "GPS-IIF-12",
+        "target": "TAINAN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "GPS-IIF-12",
+        "target": "TAICHUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0567",
+        "target": "KAOHSIUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0567",
+        "target": "HUALIEN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0567",
+        "target": "TAIPEI",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0567",
+        "target": "HSINCHU",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0567",
+        "target": "TAINAN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "ONEWEB-0567",
+        "target": "TAICHUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "IRIDIUM-NEXT-108",
+        "target": "KAOHSIUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "IRIDIUM-NEXT-108",
+        "target": "HUALIEN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "IRIDIUM-NEXT-108",
+        "target": "TAIPEI",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "IRIDIUM-NEXT-108",
+        "target": "HSINCHU",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "IRIDIUM-NEXT-108",
+        "target": "TAINAN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "IRIDIUM-NEXT-108",
+        "target": "TAICHUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-5123",
+        "target": "KAOHSIUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-5123",
+        "target": "HUALIEN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-5123",
+        "target": "TAIPEI",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-5123",
+        "target": "HSINCHU",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-5123",
+        "target": "TAINAN",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      },
+      {
+        "source": "STARLINK-5123",
+        "target": "TAICHUNG",
+        "type": "sat-ground",
+        "bandwidth_mbps": 50,
+        "latency_ms": 10.0
+      }
+    ]
+  },
+  "events": [
+    {
+      "time": "2025-10-08T00:15:30+00:00",
+      "type": "link_up",
+      "source": "STARLINK-5123",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T00:23:45+00:00",
+      "type": "link_down",
+      "source": "STARLINK-5123",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T00:24:00+00:00",
+      "type": "link_up",
+      "source": "STARLINK-5123",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T00:31:20+00:00",
+      "type": "link_down",
+      "source": "STARLINK-5123",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T01:45:00+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0234",
+      "target": "TAIPEI",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T01:54:30+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0234",
+      "target": "TAIPEI",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T01:55:00+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0234",
+      "target": "HSINCHU",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T02:07:15+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0234",
+      "target": "HSINCHU",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T02:30:15+00:00",
+      "type": "link_up",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T02:39:00+00:00",
+      "type": "link_down",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T02:39:30+00:00",
+      "type": "link_up",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T02:48:45+00:00",
+      "type": "link_down",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T03:00:00+00:00",
+      "type": "link_up",
+      "source": "GPS-IIF-12",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T03:45:00+00:00",
+      "type": "link_down",
+      "source": "GPS-IIF-12",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T03:45:30+00:00",
+      "type": "link_up",
+      "source": "GPS-IIF-12",
+      "target": "KAOHSIUNG",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T04:15:00+00:00",
+      "type": "link_down",
+      "source": "GPS-IIF-12",
+      "target": "KAOHSIUNG",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T04:20:30+00:00",
+      "type": "link_up",
+      "source": "STARLINK-7891",
+      "target": "TAIPEI",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T04:28:15+00:00",
+      "type": "link_down",
+      "source": "STARLINK-7891",
+      "target": "TAIPEI",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T04:28:45+00:00",
+      "type": "link_up",
+      "source": "STARLINK-7891",
+      "target": "HSINCHU",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T04:35:20+00:00",
+      "type": "link_down",
+      "source": "STARLINK-7891",
+      "target": "HSINCHU",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T05:15:45+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0567",
+      "target": "KAOHSIUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T05:24:00+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0567",
+      "target": "KAOHSIUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T05:24:30+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0567",
+      "target": "TAINAN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T05:33:15+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0567",
+      "target": "TAINAN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T06:42:15+00:00",
+      "type": "link_up",
+      "source": "STARLINK-5123",
+      "target": "KAOHSIUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T06:51:30+00:00",
+      "type": "link_down",
+      "source": "STARLINK-5123",
+      "target": "KAOHSIUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T06:52:00+00:00",
+      "type": "link_up",
+      "source": "STARLINK-5123",
+      "target": "TAINAN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T06:59:45+00:00",
+      "type": "link_down",
+      "source": "STARLINK-5123",
+      "target": "TAINAN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T08:12:20+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0234",
+      "target": "TAICHUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T08:20:45+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0234",
+      "target": "TAICHUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T08:21:00+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0234",
+      "target": "HUALIEN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T08:28:30+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0234",
+      "target": "HUALIEN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T09:15:45+00:00",
+      "type": "link_up",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "TAINAN",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T09:24:20+00:00",
+      "type": "link_down",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "TAINAN",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T10:45:00+00:00",
+      "type": "link_up",
+      "source": "STARLINK-7891",
+      "target": "HUALIEN",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T10:53:30+00:00",
+      "type": "link_down",
+      "source": "STARLINK-7891",
+      "target": "HUALIEN",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T11:30:20+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0567",
+      "target": "TAICHUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T11:38:45+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0567",
+      "target": "TAICHUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T11:39:00+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0567",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T11:47:30+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0567",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T12:00:00+00:00",
+      "type": "link_up",
+      "source": "STARLINK-5123",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T12:01:30+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0234",
+      "target": "TAIPEI",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T12:02:15+00:00",
+      "type": "link_up",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "KAOHSIUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T12:08:00+00:00",
+      "type": "link_down",
+      "source": "STARLINK-5123",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T12:09:45+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0234",
+      "target": "TAIPEI",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T12:10:30+00:00",
+      "type": "link_down",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "KAOHSIUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T12:11:00+00:00",
+      "type": "link_up",
+      "source": "STARLINK-5123",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T12:12:00+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0234",
+      "target": "HSINCHU",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T12:13:00+00:00",
+      "type": "link_up",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "TAINAN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T12:18:30+00:00",
+      "type": "link_down",
+      "source": "STARLINK-5123",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T12:20:15+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0234",
+      "target": "HSINCHU",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T12:21:45+00:00",
+      "type": "link_down",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "TAINAN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T18:30:00+00:00",
+      "type": "link_up",
+      "source": "STARLINK-7891",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T18:38:45+00:00",
+      "type": "link_down",
+      "source": "STARLINK-7891",
+      "target": "HSINCHU",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T18:39:15+00:00",
+      "type": "link_up",
+      "source": "STARLINK-7891",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T18:47:00+00:00",
+      "type": "link_down",
+      "source": "STARLINK-7891",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T19:15:30+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0567",
+      "target": "KAOHSIUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T19:24:15+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0567",
+      "target": "KAOHSIUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T19:24:45+00:00",
+      "type": "link_up",
+      "source": "ONEWEB-0567",
+      "target": "TAINAN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T19:32:30+00:00",
+      "type": "link_down",
+      "source": "ONEWEB-0567",
+      "target": "TAINAN",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T20:45:00+00:00",
+      "type": "link_up",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "TAIPEI",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T20:53:30+00:00",
+      "type": "link_down",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "TAIPEI",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T20:54:00+00:00",
+      "type": "link_up",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "HSINCHU",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T21:02:15+00:00",
+      "type": "link_down",
+      "source": "IRIDIUM-NEXT-108",
+      "target": "HSINCHU",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T22:00:15+00:00",
+      "type": "link_up",
+      "source": "GPS-IIF-12",
+      "target": "TAICHUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T22:35:45+00:00",
+      "type": "link_down",
+      "source": "GPS-IIF-12",
+      "target": "TAICHUNG",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T23:15:00+00:00",
+      "type": "link_up",
+      "source": "STARLINK-5123",
+      "target": "HUALIEN",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T23:23:30+00:00",
+      "type": "link_down",
+      "source": "STARLINK-5123",
+      "target": "HUALIEN",
+      "window_type": "cmd"
+    },
+    {
+      "time": "2025-10-08T23:24:00+00:00",
+      "type": "link_up",
+      "source": "STARLINK-5123",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    },
+    {
+      "time": "2025-10-08T23:31:45+00:00",
+      "type": "link_down",
+      "source": "STARLINK-5123",
+      "target": "TAIPEI",
+      "window_type": "xband"
+    }
+  ],
+  "parameters": {
+    "relay_mode": "regenerative",
+    "propagation_model": "free_space",
+    "data_rate_mbps": 50,
+    "simulation_duration_sec": 86400,
+    "processing_delay_ms": 5.0,
+    "queuing_model": "fifo",
+    "buffer_size_mb": 10
+  }
+}

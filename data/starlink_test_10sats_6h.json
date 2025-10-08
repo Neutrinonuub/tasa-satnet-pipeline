@@ -1,0 +1,566 @@
+{
+  "meta": {
+    "total_windows": 68,
+    "station_count": 6,
+    "total_satellites": 8,
+    "time_range": {
+      "start": "2025-10-08T01:02:00Z",
+      "end": "2025-10-08T03:54:00Z"
+    },
+    "generated_at": "2025-10-08T05:04:55.613517Z"
+  },
+  "stations": [
+    "HSINCHU",
+    "HUALIEN",
+    "KAOHSIUNG",
+    "TAICHUNG",
+    "TAINAN",
+    "TAIPEI"
+  ],
+  "windows": [
+    {
+      "satellite": "STARLINK-1008",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T01:02:00Z",
+      "end": "2025-10-08T01:06:30Z",
+      "elevation_max": 14.108472849862535,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "TAINAN",
+      "start": "2025-10-08T01:02:00Z",
+      "end": "2025-10-08T01:06:30Z",
+      "elevation_max": 13.728042326697395,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "TAIPEI",
+      "start": "2025-10-08T01:02:30Z",
+      "end": "2025-10-08T01:07:00Z",
+      "elevation_max": 13.730884161366927,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T01:02:30Z",
+      "end": "2025-10-08T01:07:30Z",
+      "elevation_max": 17.439773434530537,
+      "duration_sec": 300.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "TAINAN",
+      "start": "2025-10-08T01:02:30Z",
+      "end": "2025-10-08T01:07:30Z",
+      "elevation_max": 16.983415129103033,
+      "duration_sec": 300.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "HUALIEN",
+      "start": "2025-10-08T01:02:30Z",
+      "end": "2025-10-08T01:07:00Z",
+      "elevation_max": 14.670668085162815,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "TAIPEI",
+      "start": "2025-10-08T01:03:00Z",
+      "end": "2025-10-08T01:08:30Z",
+      "elevation_max": 16.935570470510758,
+      "duration_sec": 330.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "HUALIEN",
+      "start": "2025-10-08T01:03:00Z",
+      "end": "2025-10-08T01:08:00Z",
+      "elevation_max": 18.05914910519525,
+      "duration_sec": 300.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "HSINCHU",
+      "start": "2025-10-08T01:03:30Z",
+      "end": "2025-10-08T01:06:00Z",
+      "elevation_max": 11.654499556736363,
+      "duration_sec": 150.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "HSINCHU",
+      "start": "2025-10-08T01:03:30Z",
+      "end": "2025-10-08T01:07:30Z",
+      "elevation_max": 14.533473682061938,
+      "duration_sec": 240.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T01:03:30Z",
+      "end": "2025-10-08T01:05:30Z",
+      "elevation_max": 10.613190212124259,
+      "duration_sec": 120.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T01:03:30Z",
+      "end": "2025-10-08T01:07:00Z",
+      "elevation_max": 13.419400068555452,
+      "duration_sec": 210.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T01:13:30Z",
+      "end": "2025-10-08T01:19:00Z",
+      "elevation_max": 25.016135787153,
+      "duration_sec": 330.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "TAINAN",
+      "start": "2025-10-08T01:13:30Z",
+      "end": "2025-10-08T01:19:00Z",
+      "elevation_max": 24.194901987598165,
+      "duration_sec": 330.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "HUALIEN",
+      "start": "2025-10-08T01:13:30Z",
+      "end": "2025-10-08T01:19:30Z",
+      "elevation_max": 25.815349888134865,
+      "duration_sec": 360.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "TAIPEI",
+      "start": "2025-10-08T01:14:00Z",
+      "end": "2025-10-08T01:19:30Z",
+      "elevation_max": 23.76010262768607,
+      "duration_sec": 330.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "HSINCHU",
+      "start": "2025-10-08T01:14:30Z",
+      "end": "2025-10-08T01:19:00Z",
+      "elevation_max": 20.390320600502356,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T01:14:30Z",
+      "end": "2025-10-08T01:18:30Z",
+      "elevation_max": 18.77235235515337,
+      "duration_sec": 240.0
+    },
+    {
+      "satellite": "STARLINK-1029",
+      "station": "HSINCHU",
+      "start": "2025-10-08T01:58:00Z",
+      "end": "2025-10-08T02:02:00Z",
+      "elevation_max": 65.39421779323702,
+      "duration_sec": 240.0
+    },
+    {
+      "satellite": "STARLINK-1029",
+      "station": "TAIPEI",
+      "start": "2025-10-08T01:58:00Z",
+      "end": "2025-10-08T02:02:30Z",
+      "elevation_max": 59.24953253121543,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1029",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T01:58:00Z",
+      "end": "2025-10-08T02:02:30Z",
+      "elevation_max": 56.87549715702824,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1029",
+      "station": "TAINAN",
+      "start": "2025-10-08T01:58:00Z",
+      "end": "2025-10-08T02:02:30Z",
+      "elevation_max": 63.774829808491084,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1029",
+      "station": "HUALIEN",
+      "start": "2025-10-08T01:58:00Z",
+      "end": "2025-10-08T02:02:30Z",
+      "elevation_max": 69.09378734957147,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1029",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T01:58:30Z",
+      "end": "2025-10-08T02:02:00Z",
+      "elevation_max": 84.06146679506624,
+      "duration_sec": 210.0
+    },
+    {
+      "satellite": "STARLINK-1019",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T02:00:30Z",
+      "end": "2025-10-08T02:08:30Z",
+      "elevation_max": 75.76983723719354,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1019",
+      "station": "TAINAN",
+      "start": "2025-10-08T02:00:30Z",
+      "end": "2025-10-08T02:09:00Z",
+      "elevation_max": 73.20616805432093,
+      "duration_sec": 510.0
+    },
+    {
+      "satellite": "STARLINK-1019",
+      "station": "HUALIEN",
+      "start": "2025-10-08T02:01:00Z",
+      "end": "2025-10-08T02:09:00Z",
+      "elevation_max": 77.12224194595481,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1019",
+      "station": "HSINCHU",
+      "start": "2025-10-08T02:01:30Z",
+      "end": "2025-10-08T02:09:00Z",
+      "elevation_max": 65.5656588074595,
+      "duration_sec": 450.0
+    },
+    {
+      "satellite": "STARLINK-1019",
+      "station": "TAIPEI",
+      "start": "2025-10-08T02:01:30Z",
+      "end": "2025-10-08T02:09:30Z",
+      "elevation_max": 69.65987584639828,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1019",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T02:01:30Z",
+      "end": "2025-10-08T02:08:30Z",
+      "elevation_max": 63.881075044958436,
+      "duration_sec": 420.0
+    },
+    {
+      "satellite": "STARLINK-1012",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T02:06:00Z",
+      "end": "2025-10-08T02:14:00Z",
+      "elevation_max": 85.40114619499326,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1012",
+      "station": "TAINAN",
+      "start": "2025-10-08T02:06:00Z",
+      "end": "2025-10-08T02:14:30Z",
+      "elevation_max": 85.42834561966593,
+      "duration_sec": 510.0
+    },
+    {
+      "satellite": "STARLINK-1012",
+      "station": "HUALIEN",
+      "start": "2025-10-08T02:06:30Z",
+      "end": "2025-10-08T02:14:30Z",
+      "elevation_max": 85.30123527773947,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1012",
+      "station": "HSINCHU",
+      "start": "2025-10-08T02:07:00Z",
+      "end": "2025-10-08T02:14:30Z",
+      "elevation_max": 77.84627346616739,
+      "duration_sec": 450.0
+    },
+    {
+      "satellite": "STARLINK-1012",
+      "station": "TAIPEI",
+      "start": "2025-10-08T02:07:00Z",
+      "end": "2025-10-08T02:15:00Z",
+      "elevation_max": 80.25510662704285,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1012",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T02:07:00Z",
+      "end": "2025-10-08T02:14:00Z",
+      "elevation_max": 74.74822934300259,
+      "duration_sec": 420.0
+    },
+    {
+      "satellite": "STARLINK-1020",
+      "station": "HUALIEN",
+      "start": "2025-10-08T02:10:00Z",
+      "end": "2025-10-08T02:11:00Z",
+      "elevation_max": 10.14486788153367,
+      "duration_sec": 60.0
+    },
+    {
+      "satellite": "STARLINK-1011",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T02:14:00Z",
+      "end": "2025-10-08T02:19:30Z",
+      "elevation_max": 29.683839744243944,
+      "duration_sec": 330.0
+    },
+    {
+      "satellite": "STARLINK-1011",
+      "station": "TAINAN",
+      "start": "2025-10-08T02:14:00Z",
+      "end": "2025-10-08T02:19:30Z",
+      "elevation_max": 31.760436570578484,
+      "duration_sec": 330.0
+    },
+    {
+      "satellite": "STARLINK-1011",
+      "station": "HUALIEN",
+      "start": "2025-10-08T02:14:30Z",
+      "end": "2025-10-08T02:19:30Z",
+      "elevation_max": 29.547990362887166,
+      "duration_sec": 300.0
+    },
+    {
+      "satellite": "STARLINK-1011",
+      "station": "HSINCHU",
+      "start": "2025-10-08T02:15:00Z",
+      "end": "2025-10-08T02:19:30Z",
+      "elevation_max": 32.862469740168194,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1011",
+      "station": "TAIPEI",
+      "start": "2025-10-08T02:15:00Z",
+      "end": "2025-10-08T02:20:00Z",
+      "elevation_max": 34.48245098557704,
+      "duration_sec": 300.0
+    },
+    {
+      "satellite": "STARLINK-1011",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T02:15:00Z",
+      "end": "2025-10-08T02:19:00Z",
+      "elevation_max": 28.110182334709663,
+      "duration_sec": 240.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T02:39:30Z",
+      "end": "2025-10-08T02:47:00Z",
+      "elevation_max": 35.95138315063037,
+      "duration_sec": 450.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "TAINAN",
+      "start": "2025-10-08T02:39:30Z",
+      "end": "2025-10-08T02:47:00Z",
+      "elevation_max": 37.70179733824022,
+      "duration_sec": 450.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "HSINCHU",
+      "start": "2025-10-08T02:40:00Z",
+      "end": "2025-10-08T02:47:30Z",
+      "elevation_max": 39.4174431159899,
+      "duration_sec": 450.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "TAIPEI",
+      "start": "2025-10-08T02:40:00Z",
+      "end": "2025-10-08T02:48:00Z",
+      "elevation_max": 40.07311643773149,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "HUALIEN",
+      "start": "2025-10-08T02:40:00Z",
+      "end": "2025-10-08T02:47:30Z",
+      "elevation_max": 35.9637910194313,
+      "duration_sec": 450.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T02:40:30Z",
+      "end": "2025-10-08T02:47:30Z",
+      "elevation_max": 27.674624062149793,
+      "duration_sec": 420.0
+    },
+    {
+      "satellite": "STARLINK-1008",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T02:40:30Z",
+      "end": "2025-10-08T02:47:00Z",
+      "elevation_max": 36.22349585744526,
+      "duration_sec": 390.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "TAINAN",
+      "start": "2025-10-08T02:40:30Z",
+      "end": "2025-10-08T02:47:30Z",
+      "elevation_max": 28.988179769151387,
+      "duration_sec": 420.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "HSINCHU",
+      "start": "2025-10-08T02:41:00Z",
+      "end": "2025-10-08T02:48:00Z",
+      "elevation_max": 29.879356634875574,
+      "duration_sec": 420.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "TAIPEI",
+      "start": "2025-10-08T02:41:00Z",
+      "end": "2025-10-08T02:48:00Z",
+      "elevation_max": 31.30564374933261,
+      "duration_sec": 420.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T02:41:00Z",
+      "end": "2025-10-08T02:47:30Z",
+      "elevation_max": 27.21850646987971,
+      "duration_sec": 390.0
+    },
+    {
+      "satellite": "STARLINK-1017",
+      "station": "HUALIEN",
+      "start": "2025-10-08T02:41:00Z",
+      "end": "2025-10-08T02:48:00Z",
+      "elevation_max": 27.81452222598327,
+      "duration_sec": 420.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T02:51:00Z",
+      "end": "2025-10-08T02:55:30Z",
+      "elevation_max": 14.87799968740678,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "TAINAN",
+      "start": "2025-10-08T02:51:00Z",
+      "end": "2025-10-08T02:55:30Z",
+      "elevation_max": 15.750110825473799,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "HSINCHU",
+      "start": "2025-10-08T02:51:30Z",
+      "end": "2025-10-08T02:56:00Z",
+      "elevation_max": 15.773798282253471,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "TAIPEI",
+      "start": "2025-10-08T02:51:30Z",
+      "end": "2025-10-08T02:56:30Z",
+      "elevation_max": 17.275866234038787,
+      "duration_sec": 300.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "HUALIEN",
+      "start": "2025-10-08T02:51:30Z",
+      "end": "2025-10-08T02:56:00Z",
+      "elevation_max": 15.121513939640716,
+      "duration_sec": 270.0
+    },
+    {
+      "satellite": "STARLINK-1031",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T02:52:00Z",
+      "end": "2025-10-08T02:55:00Z",
+      "elevation_max": 13.546851412382454,
+      "duration_sec": 180.0
+    },
+    {
+      "satellite": "STARLINK-1019",
+      "station": "TAIPEI",
+      "start": "2025-10-08T03:44:00Z",
+      "end": "2025-10-08T03:46:30Z",
+      "elevation_max": 10.879991906913164,
+      "duration_sec": 150.0
+    },
+    {
+      "satellite": "STARLINK-1020",
+      "station": "KAOHSIUNG",
+      "start": "2025-10-08T03:45:00Z",
+      "end": "2025-10-08T03:53:00Z",
+      "elevation_max": 50.843124576561635,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1020",
+      "station": "TAINAN",
+      "start": "2025-10-08T03:45:30Z",
+      "end": "2025-10-08T03:53:00Z",
+      "elevation_max": 53.66200062544209,
+      "duration_sec": 450.0
+    },
+    {
+      "satellite": "STARLINK-1020",
+      "station": "HUALIEN",
+      "start": "2025-10-08T03:45:30Z",
+      "end": "2025-10-08T03:53:30Z",
+      "elevation_max": 50.493907342275314,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1020",
+      "station": "HSINCHU",
+      "start": "2025-10-08T03:46:00Z",
+      "end": "2025-10-08T03:53:30Z",
+      "elevation_max": 57.39686095383723,
+      "duration_sec": 450.0
+    },
+    {
+      "satellite": "STARLINK-1020",
+      "station": "TAIPEI",
+      "start": "2025-10-08T03:46:00Z",
+      "end": "2025-10-08T03:54:00Z",
+      "elevation_max": 56.99444990528601,
+      "duration_sec": 480.0
+    },
+    {
+      "satellite": "STARLINK-1020",
+      "station": "TAICHUNG",
+      "start": "2025-10-08T03:46:00Z",
+      "end": "2025-10-08T03:53:00Z",
+      "elevation_max": 52.5535064023829,
+      "duration_sec": 420.0
+    }
+  ]
+}

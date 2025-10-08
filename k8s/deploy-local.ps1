@@ -72,8 +72,19 @@ kubectl get all -n tasa-satnet
 Write-Host ""
 
 Write-Host "=== Deployment Complete ===" -ForegroundColor Green
-Write-Host "Commands:"
-Write-Host "  kubectl get all -n tasa-satnet           # Check status"
-Write-Host "  kubectl logs -f -n tasa-satnet <pod>     # Follow logs"
-Write-Host "  kubectl apply -f k8s/job-parser.yaml     # Run parser job"
-Write-Host "  kubectl apply -f k8s/job-test.yaml       # Run tests"
+Write-Host ""
+Write-Host "Available Jobs:" -ForegroundColor Cyan
+Write-Host "  kubectl apply -f k8s/job-test-real.yaml          # Basic pipeline test"
+Write-Host "  kubectl apply -f k8s/job-integrated-pipeline.yaml # Phase 3C integrated test (TLE, Multi-constellation, Viz)"
+Write-Host ""
+Write-Host "Management Commands:" -ForegroundColor Cyan
+Write-Host "  kubectl get all -n tasa-satnet                   # Check status"
+Write-Host "  kubectl logs -f -n tasa-satnet job/<job-name>    # Follow job logs"
+Write-Host "  kubectl describe configmap tasa-pipeline-config -n tasa-satnet  # View config"
+Write-Host ""
+Write-Host "Phase 3C Features Enabled:" -ForegroundColor Yellow
+Write-Host "  ✓ TLE-OASIS Integration (union merge strategy)"
+Write-Host "  ✓ Multi-Constellation Support (GPS, Starlink, OneWeb, Iridium)"
+Write-Host "  ✓ Visualization Generation (4 types)"
+Write-Host "  ✓ Constellation Conflict Detection"
+Write-Host "  ✓ Priority-based Scheduling"

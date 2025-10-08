@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_64b8aec69dcec8124663097f8f22d51c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_64b8aec69dcec8124663097f8f22d51c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_64b8aec69dcec8124663097f8f22d51c = L.map(
+                "map_64b8aec69dcec8124663097f8f22d51c",
+                {
+                    center: [23.7, 120.9],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_028f06ef43fcdb32d56754478b86a1dd = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_028f06ef43fcdb32d56754478b86a1dd.addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            var marker_fb02ec686d374ba4834e25f103fddacf = L.marker(
+                [24.7881, 120.9979],
+                {}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            var icon_a98284932f6ffac219ded179a3a0b938 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "satellite", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_fb02ec686d374ba4834e25f103fddacf.setIcon(icon_a98284932f6ffac219ded179a3a0b938);
+        
+    
+        var popup_d608cc375c05455a9235c309de8839d3 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_35bb21c39677608daedb53efbb960fb0 = $(`<div id="html_35bb21c39677608daedb53efbb960fb0" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial; font-size: 12px;">                 <h4 style="margin: 0 0 10px 0; color: #333;">HSINCHU</h4>                 <p style="margin: 5px 0;"><strong>Location:</strong> 新竹站</p>                 <p style="margin: 5px 0;"><strong>Type:</strong> Command Control</p>                 <p style="margin: 5px 0;"><strong>Coordinates:</strong> 24.7881°N, 120.9979°E</p>                 <p style="margin: 5px 0;"><strong>Altitude:</strong> 52 m</p>             </div>             </div>`)[0];
+                popup_d608cc375c05455a9235c309de8839d3.setContent(html_35bb21c39677608daedb53efbb960fb0);
+            
+        
+
+        marker_fb02ec686d374ba4834e25f103fddacf.bindPopup(popup_d608cc375c05455a9235c309de8839d3)
+        ;
+
+        
+    
+    
+            marker_fb02ec686d374ba4834e25f103fddacf.bindTooltip(
+                `<div>
+                     HSINCHU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_5ab2ea87349ba056072e6217ca82df44 = L.circle(
+                [24.7881, 120.9979],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.5, "radius": 2057605.560021121, "stroke": true, "weight": 2}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            circle_5ab2ea87349ba056072e6217ca82df44.bindTooltip(
+                `<div>
+                     HSINCHU coverage (~2058 km)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d48df2d3cab9606af8da02d40ead98c3 = L.marker(
+                [25.033, 121.5654],
+                {}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            var icon_d45aeb75e02c7b2d48a7bb3f2174e7a0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "satellite", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d48df2d3cab9606af8da02d40ead98c3.setIcon(icon_d45aeb75e02c7b2d48a7bb3f2174e7a0);
+        
+    
+        var popup_56e6d696ea6853119e5fe58135cf2ffc = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_6e49a6da1d83793624096783b09d49c8 = $(`<div id="html_6e49a6da1d83793624096783b09d49c8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial; font-size: 12px;">                 <h4 style="margin: 0 0 10px 0; color: #333;">TAIPEI</h4>                 <p style="margin: 5px 0;"><strong>Location:</strong> 台北站</p>                 <p style="margin: 5px 0;"><strong>Type:</strong> Data Downlink</p>                 <p style="margin: 5px 0;"><strong>Coordinates:</strong> 25.0330°N, 121.5654°E</p>                 <p style="margin: 5px 0;"><strong>Altitude:</strong> 10 m</p>             </div>             </div>`)[0];
+                popup_56e6d696ea6853119e5fe58135cf2ffc.setContent(html_6e49a6da1d83793624096783b09d49c8);
+            
+        
+
+        marker_d48df2d3cab9606af8da02d40ead98c3.bindPopup(popup_56e6d696ea6853119e5fe58135cf2ffc)
+        ;
+
+        
+    
+    
+            marker_d48df2d3cab9606af8da02d40ead98c3.bindTooltip(
+                `<div>
+                     TAIPEI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_5cc9cefb61a0e11f9977791177815e0b = L.circle(
+                [25.033, 121.5654],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.5, "radius": 2057605.560021121, "stroke": true, "weight": 2}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            circle_5cc9cefb61a0e11f9977791177815e0b.bindTooltip(
+                `<div>
+                     TAIPEI coverage (~2058 km)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe7a50936c2ded9e7a66008f4142cf6e = L.marker(
+                [22.6273, 120.3014],
+                {}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            var icon_affa20b072df11a9dec16d77d7688a74 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "satellite", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_fe7a50936c2ded9e7a66008f4142cf6e.setIcon(icon_affa20b072df11a9dec16d77d7688a74);
+        
+    
+        var popup_9e8e5ffc9f031b26b27917da03410dda = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_794b33ec1f0224dc4d5cc7518cd366c2 = $(`<div id="html_794b33ec1f0224dc4d5cc7518cd366c2" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial; font-size: 12px;">                 <h4 style="margin: 0 0 10px 0; color: #333;">KAOHSIUNG</h4>                 <p style="margin: 5px 0;"><strong>Location:</strong> 高雄站</p>                 <p style="margin: 5px 0;"><strong>Type:</strong> Command Control</p>                 <p style="margin: 5px 0;"><strong>Coordinates:</strong> 22.6273°N, 120.3014°E</p>                 <p style="margin: 5px 0;"><strong>Altitude:</strong> 15 m</p>             </div>             </div>`)[0];
+                popup_9e8e5ffc9f031b26b27917da03410dda.setContent(html_794b33ec1f0224dc4d5cc7518cd366c2);
+            
+        
+
+        marker_fe7a50936c2ded9e7a66008f4142cf6e.bindPopup(popup_9e8e5ffc9f031b26b27917da03410dda)
+        ;
+
+        
+    
+    
+            marker_fe7a50936c2ded9e7a66008f4142cf6e.bindTooltip(
+                `<div>
+                     KAOHSIUNG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_725976af27dea6a8f87c12f2085bcaa4 = L.circle(
+                [22.6273, 120.3014],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.5, "radius": 2057605.560021121, "stroke": true, "weight": 2}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            circle_725976af27dea6a8f87c12f2085bcaa4.bindTooltip(
+                `<div>
+                     KAOHSIUNG coverage (~2058 km)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e73bc8a5edbb00b74d04e528f4f81c80 = L.marker(
+                [24.1477, 120.6736],
+                {}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            var icon_a12e7184e7f8e359cd7d9c08662cd2aa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "satellite", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_e73bc8a5edbb00b74d04e528f4f81c80.setIcon(icon_a12e7184e7f8e359cd7d9c08662cd2aa);
+        
+    
+        var popup_2f682b0db78806f96fb72e684dd4f788 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_1095f95355fd84205e2b8397f92336bb = $(`<div id="html_1095f95355fd84205e2b8397f92336bb" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial; font-size: 12px;">                 <h4 style="margin: 0 0 10px 0; color: #333;">TAICHUNG</h4>                 <p style="margin: 5px 0;"><strong>Location:</strong> 台中站</p>                 <p style="margin: 5px 0;"><strong>Type:</strong> Telemetry</p>                 <p style="margin: 5px 0;"><strong>Coordinates:</strong> 24.1477°N, 120.6736°E</p>                 <p style="margin: 5px 0;"><strong>Altitude:</strong> 84 m</p>             </div>             </div>`)[0];
+                popup_2f682b0db78806f96fb72e684dd4f788.setContent(html_1095f95355fd84205e2b8397f92336bb);
+            
+        
+
+        marker_e73bc8a5edbb00b74d04e528f4f81c80.bindPopup(popup_2f682b0db78806f96fb72e684dd4f788)
+        ;
+
+        
+    
+    
+            marker_e73bc8a5edbb00b74d04e528f4f81c80.bindTooltip(
+                `<div>
+                     TAICHUNG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_f8a70f4b09e33e2c22d1a984295584d4 = L.circle(
+                [24.1477, 120.6736],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.5, "radius": 2057605.560021121, "stroke": true, "weight": 2}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            circle_f8a70f4b09e33e2c22d1a984295584d4.bindTooltip(
+                `<div>
+                     TAICHUNG coverage (~2058 km)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d552c2a8ea69cb5edcec6f20fde3e300 = L.marker(
+                [22.9997, 120.227],
+                {}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            var icon_ca96ba579158040fffdbb711e626d398 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "satellite", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d552c2a8ea69cb5edcec6f20fde3e300.setIcon(icon_ca96ba579158040fffdbb711e626d398);
+        
+    
+        var popup_20a9a84026b8dc424be387f7f271122b = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_62890bbc8a7a0a9a874c31ec84b2c4b8 = $(`<div id="html_62890bbc8a7a0a9a874c31ec84b2c4b8" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial; font-size: 12px;">                 <h4 style="margin: 0 0 10px 0; color: #333;">TAINAN</h4>                 <p style="margin: 5px 0;"><strong>Location:</strong> 台南站</p>                 <p style="margin: 5px 0;"><strong>Type:</strong> Data Downlink</p>                 <p style="margin: 5px 0;"><strong>Coordinates:</strong> 22.9997°N, 120.2270°E</p>                 <p style="margin: 5px 0;"><strong>Altitude:</strong> 12 m</p>             </div>             </div>`)[0];
+                popup_20a9a84026b8dc424be387f7f271122b.setContent(html_62890bbc8a7a0a9a874c31ec84b2c4b8);
+            
+        
+
+        marker_d552c2a8ea69cb5edcec6f20fde3e300.bindPopup(popup_20a9a84026b8dc424be387f7f271122b)
+        ;
+
+        
+    
+    
+            marker_d552c2a8ea69cb5edcec6f20fde3e300.bindTooltip(
+                `<div>
+                     TAINAN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_06920c96bd53ee4cb4d192ac523374c3 = L.circle(
+                [22.9997, 120.227],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.5, "radius": 2057605.560021121, "stroke": true, "weight": 2}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            circle_06920c96bd53ee4cb4d192ac523374c3.bindTooltip(
+                `<div>
+                     TAINAN coverage (~2058 km)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_15a9ee8504213894ee6b0d34e022503d = L.marker(
+                [23.9871, 121.6015],
+                {}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            var icon_5c826b2b3f84155bb993e26542dc5b39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "satellite", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_15a9ee8504213894ee6b0d34e022503d.setIcon(icon_5c826b2b3f84155bb993e26542dc5b39);
+        
+    
+        var popup_2f11295b7de19ff7f4a87aaab05c56d3 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_8c21518ae8ec4874840ed2bb37011587 = $(`<div id="html_8c21518ae8ec4874840ed2bb37011587" style="width: 100.0%; height: 100.0%;">             <div style="font-family: Arial; font-size: 12px;">                 <h4 style="margin: 0 0 10px 0; color: #333;">HUALIEN</h4>                 <p style="margin: 5px 0;"><strong>Location:</strong> 花蓮站</p>                 <p style="margin: 5px 0;"><strong>Type:</strong> Backup</p>                 <p style="margin: 5px 0;"><strong>Coordinates:</strong> 23.9871°N, 121.6015°E</p>                 <p style="margin: 5px 0;"><strong>Altitude:</strong> 16 m</p>             </div>             </div>`)[0];
+                popup_2f11295b7de19ff7f4a87aaab05c56d3.setContent(html_8c21518ae8ec4874840ed2bb37011587);
+            
+        
+
+        marker_15a9ee8504213894ee6b0d34e022503d.bindPopup(popup_2f11295b7de19ff7f4a87aaab05c56d3)
+        ;
+
+        
+    
+    
+            marker_15a9ee8504213894ee6b0d34e022503d.bindTooltip(
+                `<div>
+                     HUALIEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_bbce048857c0b6c2944d5172791f209a = L.circle(
+                [23.9871, 121.6015],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.5, "radius": 2057605.560021121, "stroke": true, "weight": 2}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+            circle_bbce048857c0b6c2944d5172791f209a.bindTooltip(
+                `<div>
+                     HUALIEN coverage (~2058 km)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_63851779ddd87ff06a43ff81b9704818 = L.circleMarker(
+                [25.033, 121.5654],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+        var popup_db30d39e7ff56e9ef8d7852ec1c0dc6b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_9267d13a393421677d1c3b518fb527cb = $(`<div id="html_9267d13a393421677d1c3b518fb527cb" style="width: 100.0%; height: 100.0%;">                     <div style="font-family: Arial; font-size: 11px;">                         <h5 style="margin: 0 0 8px 0;">SAT-1 Pass</h5>                         <p style="margin: 3px 0;"><strong>Gateway:</strong> TAIPEI</p>                         <p style="margin: 3px 0;"><strong>Type:</strong> xband</p>                         <p style="margin: 3px 0;"><strong>Start:</strong> 2025-10-08T02:00:00Z</p>                         <p style="margin: 3px 0;"><strong>End:</strong> 2025-10-08T02:08:00Z</p>                     </div>                     </div>`)[0];
+                popup_db30d39e7ff56e9ef8d7852ec1c0dc6b.setContent(html_9267d13a393421677d1c3b518fb527cb);
+            
+        
+
+        circle_marker_63851779ddd87ff06a43ff81b9704818.bindPopup(popup_db30d39e7ff56e9ef8d7852ec1c0dc6b)
+        ;
+
+        
+    
+    
+            var circle_marker_a789528ebbfa7a44fa993b8324107e29 = L.circleMarker(
+                [24.7881, 120.9979],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+        
+    
+        var popup_82e3cb421520365e3fecb8a2a9c6a236 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_4bad18c1d66d97e532067bd7e4ccfb42 = $(`<div id="html_4bad18c1d66d97e532067bd7e4ccfb42" style="width: 100.0%; height: 100.0%;">                     <div style="font-family: Arial; font-size: 11px;">                         <h5 style="margin: 0 0 8px 0;">SAT-1 Pass</h5>                         <p style="margin: 3px 0;"><strong>Gateway:</strong> HSINCHU</p>                         <p style="margin: 3px 0;"><strong>Type:</strong> cmd</p>                         <p style="margin: 3px 0;"><strong>Start:</strong> 2025-10-08T01:23:45Z</p>                         <p style="margin: 3px 0;"><strong>End:</strong> 2025-10-08T01:33:45Z</p>                     </div>                     </div>`)[0];
+                popup_82e3cb421520365e3fecb8a2a9c6a236.setContent(html_4bad18c1d66d97e532067bd7e4ccfb42);
+            
+        
+
+        circle_marker_a789528ebbfa7a44fa993b8324107e29.bindPopup(popup_82e3cb421520365e3fecb8a2a9c6a236)
+        ;
+
+        
+    
+    
+            var layer_control_5df3f6861a7c844512e892eba3ec5a63_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_028f06ef43fcdb32d56754478b86a1dd,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_5df3f6861a7c844512e892eba3ec5a63 = L.control.layers(
+                layer_control_5df3f6861a7c844512e892eba3ec5a63_layers.base_layers,
+                layer_control_5df3f6861a7c844512e892eba3ec5a63_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_64b8aec69dcec8124663097f8f22d51c);
+
+        
+</script>
+</html>

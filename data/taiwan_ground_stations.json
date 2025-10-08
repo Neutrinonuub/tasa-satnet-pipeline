@@ -1,0 +1,71 @@
+{
+  "ground_stations": [
+    {
+      "name": "HSINCHU",
+      "location": "新竹站",
+      "lat": 24.7881,
+      "lon": 120.9979,
+      "alt": 52,
+      "type": "command_control",
+      "capacity_beams": 8,
+      "frequency_bands": ["S-band", "X-band", "Ka-band"]
+    },
+    {
+      "name": "TAIPEI",
+      "location": "台北站",
+      "lat": 25.0330,
+      "lon": 121.5654,
+      "alt": 10,
+      "type": "data_downlink",
+      "capacity_beams": 6,
+      "frequency_bands": ["X-band", "Ka-band"]
+    },
+    {
+      "name": "KAOHSIUNG",
+      "location": "高雄站",
+      "lat": 22.6273,
+      "lon": 120.3014,
+      "alt": 15,
+      "type": "command_control",
+      "capacity_beams": 8,
+      "frequency_bands": ["S-band", "X-band"]
+    },
+    {
+      "name": "TAICHUNG",
+      "location": "台中站",
+      "lat": 24.1477,
+      "lon": 120.6736,
+      "alt": 84,
+      "type": "telemetry",
+      "capacity_beams": 4,
+      "frequency_bands": ["S-band", "UHF"]
+    },
+    {
+      "name": "TAINAN",
+      "location": "台南站",
+      "lat": 22.9997,
+      "lon": 120.2270,
+      "alt": 12,
+      "type": "data_downlink",
+      "capacity_beams": 6,
+      "frequency_bands": ["X-band", "Ka-band"]
+    },
+    {
+      "name": "HUALIEN",
+      "location": "花蓮站",
+      "lat": 23.9871,
+      "lon": 121.6015,
+      "alt": 16,
+      "type": "backup",
+      "capacity_beams": 4,
+      "frequency_bands": ["S-band", "X-band"]
+    }
+  ],
+  "network_info": {
+    "operator": "TASA",
+    "country": "Taiwan",
+    "total_stations": 6,
+    "total_beams": 36,
+    "coverage_area": "Taiwan and surrounding waters"
+  }
+}
